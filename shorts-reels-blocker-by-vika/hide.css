@@ -1,0 +1,26 @@
+/* Shorts & Reels Blocker: hides Shorts/Reels shelves, tabs and cards.
+   Selectors are simple so they keep working even when the page layout changes. */
+
+/* YouTube: Shorts shelf on home/subscriptions, Shorts cards, sidebar and mini-guide entries */
+ytd-reel-shelf-renderer,
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+grid-shelf-view-model:has(a[href^="/shorts/"]),
+ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+ytd-video-renderer:has(a[href^="/shorts/"]),
+ytd-guide-entry-renderer:has(a[href="/shorts"]),
+ytd-mini-guide-entry-renderer:has(a[href="/shorts"]),
+ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+ytd-guide-entry-renderer[aria-label="Shorts"],
+yt-chip-cloud-chip-renderer:has(a[href*="/shorts"]) {
+  display: none !important;
+}
+
+/* Instagram and Facebook: Reels tab and nav links */
+a[href="/reels/"],
+a[href="/reels"],
+a[href$="/reels/"],
+a[aria-label="Reels"],
+a[href="/reel/"] {
+  display: none !important;
+}
